@@ -2,7 +2,7 @@
 """
 Created on Fri Nov 25 08:25:36 2016
 
-@author: M058091
+@author: Peter Knight
 """
 
 import collections
