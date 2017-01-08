@@ -12,6 +12,14 @@ import datetime
 
 """ Dictionary manipulation goes here. """
 
+def listify_dicts(input_list_or_dict):
+    working_list = []
+    if type(input_list_or_dict) == dict:
+        working_list.append(input_list_or_dict)
+    else:
+        working_list = input_list_or_dict
+    return working_list
+
 def flatten_dictionary(d, parent_key='', sep='_'):
 
     items = []
@@ -91,6 +99,11 @@ def tests():
     list_of_dicts.append({u'CUSTOMER_ID': u'A', u'EVENT_DATE': datetime.datetime(2016, 2, 4, 12, 0), u'EVENT_TYPE': u'INBOUND PHONE CALL'})
     list_of_dicts.append({u'CUSTOMER_ID': u'A', u'EVENT_DATE': datetime.datetime(2016, 2, 8, 12, 0), u'EVENT_TYPE': u'PAYMENT RECEIVED'}) 
     print count_keys_in_dictionary(list_of_dicts,keyname = "EVENT_TYPE")
+    
+    print ' listify test 1:' 
+    print listify_dicts({"b":2, "c":3})
+    print ' listify test 2:' 
+    print listify_dicts([{"b":2, "c":3},{"b":4, "c":5}])
     
 if __name__ == '__main__':
     tests()
