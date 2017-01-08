@@ -13,6 +13,10 @@ import datetime
 """ Dictionary manipulation goes here. """
 
 def listify_dicts(input_list_or_dict):
+    """A function to allow just sending one dictionary into another function built to handle lists of dictionaries.
+    Accepts: Either a dictionary or a list of dictionaries.
+    Returns: A list of dictionaries.
+    """
     working_list = []
     if type(input_list_or_dict) == dict:
         working_list.append(input_list_or_dict)
@@ -21,6 +25,10 @@ def listify_dicts(input_list_or_dict):
     return working_list
 
 def flatten_dictionary(d, parent_key='', sep='_'):
+    """ Built for use with older versions of Vowpal Wabbit to flatten data before converting it to VW native format
+    Accepts: Dictionary
+    Returns: Dictionary
+    """
 
     items = []
     for k, v in d.items():
@@ -34,6 +42,7 @@ def flatten_dictionary(d, parent_key='', sep='_'):
 
 
 def remove_null_keys_from_dictionary(dict_to_clean):
+    """Removes keys with a value of None from a dictionary! Accepts and returns a single dictionary"""
     cleaned = []
     for i, j in dict_to_clean.items():
         if j is not None and j != 'None':
@@ -43,6 +52,10 @@ def remove_null_keys_from_dictionary(dict_to_clean):
 
 
 def count_keys_in_dictionary(input_list_of_dicts, keyname = "EVENT_TYPE"):
+    """ Counts occurences of a specific key value in a list of dictionaries.
+    Accepts: List of dictionaries.
+    Returns: Dictionary.
+    """
     countlist = []
     for i in input_list_of_dicts:
         newdict = {}
@@ -55,7 +68,7 @@ def count_keys_in_dictionary(input_list_of_dicts, keyname = "EVENT_TYPE"):
        counter = collections.Counter(countlist[0])
        for d in countlist[1:]:
            counter += collections.Counter(d)
-       return counter 
+       return  dict(counter) 
     except:
         pass
     
