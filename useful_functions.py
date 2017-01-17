@@ -38,7 +38,7 @@ def flatten_dictionary(d, parent_key='', sep='_'):
         else:
             items.append((new_key, v))
     return dict(items)
-        
+
 
 
 def remove_null_keys_from_dictionary(dict_to_clean):
@@ -64,11 +64,11 @@ def count_keys_in_dictionary(input_list_of_dicts, keyname = "EVENT_TYPE"):
             countlist.append(newdict)
         except:
             pass
-    try:    
+    try:
        counter = collections.Counter(countlist[0])
        for d in countlist[1:]:
            counter += collections.Counter(d)
-       return  dict(counter) 
+       return  dict(counter)
     except:
         pass
     
@@ -89,7 +89,7 @@ def pynetcat(hostname, port, content, buffer_size = 2048):
             break
         reply = data
     s.close()
-    return reply    
+    return reply
         
     
 
@@ -99,8 +99,8 @@ def pynetcat(hostname, port, content, buffer_size = 2048):
 
 
 def tests():
-    print ' flatten_dictionary test:'   
-    a = {"a":1, "d":{"b":2, "c":3}}   
+    print ' flatten_dictionary test:'
+    a = {"a":1, "d":{"b":2, "c":3}}
     print flatten_dictionary(a)
        
     print '\n count_keys_in_dictionary test:'
@@ -110,12 +110,12 @@ def tests():
     list_of_dicts.append({u'CUSTOMER_ID': u'A', u'EVENT_DATE': datetime.datetime(2016, 1, 7, 12, 0), u'EVENT_TYPE': u'PAYMENT RECEIVED'})
     list_of_dicts.append({u'CUSTOMER_ID': u'A', u'EVENT_DATE': datetime.datetime(2016, 2, 1, 12, 0), u'EVENT_TYPE': u'BILL SENT'})
     list_of_dicts.append({u'CUSTOMER_ID': u'A', u'EVENT_DATE': datetime.datetime(2016, 2, 4, 12, 0), u'EVENT_TYPE': u'INBOUND PHONE CALL'})
-    list_of_dicts.append({u'CUSTOMER_ID': u'A', u'EVENT_DATE': datetime.datetime(2016, 2, 8, 12, 0), u'EVENT_TYPE': u'PAYMENT RECEIVED'}) 
+    list_of_dicts.append({u'CUSTOMER_ID': u'A', u'EVENT_DATE': datetime.datetime(2016, 2, 8, 12, 0), u'EVENT_TYPE': u'PAYMENT RECEIVED'})
     print count_keys_in_dictionary(list_of_dicts,keyname = "EVENT_TYPE")
     
-    print ' listify test 1:' 
+    print ' listify test 1:'
     print listify_dicts({"b":2, "c":3})
-    print ' listify test 2:' 
+    print ' listify test 2:'
     print listify_dicts([{"b":2, "c":3},{"b":4, "c":5}])
     
 if __name__ == '__main__':
