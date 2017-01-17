@@ -10,7 +10,7 @@ import socket
 import datetime
 
 
-## Dictionary manipulation goes here. 
+## Dictionary manipulation goes here.
 
 def listify_dicts(input_list_or_dict):
     """A function to allow just sending one dictionary into another function built to handle lists of dictionaries.
