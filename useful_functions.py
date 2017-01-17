@@ -10,7 +10,7 @@ import socket
 import datetime
 
 
-""" Dictionary manipulation goes here. """
+## Dictionary manipulation goes here. 
 
 def listify_dicts(input_list_or_dict):
     """A function to allow just sending one dictionary into another function built to handle lists of dictionaries.
@@ -74,8 +74,8 @@ def count_keys_in_dictionary(input_list_of_dicts, keyname = "EVENT_TYPE"):
     
 
 
-
-""" Networking stuff goes here. """
+    
+## Networking stuff goes here.
 
 def pynetcat(hostname, port, content, buffer_size = 2048):
 
