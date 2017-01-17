@@ -71,7 +71,7 @@ def count_keys_in_dictionary(input_list_of_dicts, keyname = "EVENT_TYPE"):
        return  dict(counter)
     except:
         pass
-    
+
 
 
     
